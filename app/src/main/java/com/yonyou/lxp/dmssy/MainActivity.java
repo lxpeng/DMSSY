@@ -106,9 +106,8 @@ public static final int MSG_OPEN_TEST_URL = 0;
     private static final int MAX_LENGTH = 14;
     private ProgressBar mPageLoadingProgressBar;
     private X5WebView mWebView;
-    private ViewGroup mViewParent;
-    private static final String mHomeUrl = "http://222.180.239.10:9080/dcsapp/JC_UI/login.html";
-//    private static final String mHomeUrl = "file:///android_asset/JC_UI/login.html";
+    private ViewGroup mViewParent;;
+    private static final String mHomeUrl = "http://dms.changan.com.cn/cvs-app/SY_UI/login.html";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
