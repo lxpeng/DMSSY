@@ -24,6 +24,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -35,7 +36,7 @@ import com.tencent.smtt.utils.TbsLog;
 import com.yonyou.lxp.dmssy.utils.X5WebView;
 
 public class MainActivity extends AppCompatActivity {
-//
+    //
 //    private WebView webView;
 //    private Context context;
 //
@@ -97,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
 //        }
 //        return super.onKeyDown(keyCode, event);
 //    }
-public static final int MSG_OPEN_TEST_URL = 0;
+    public static final int MSG_OPEN_TEST_URL = 0;
     public static final int MSG_INIT_UI = 1;
     private final int mUrlStartNum = 0;
     private final int mUrlEndNum = 108;
@@ -105,8 +106,9 @@ public static final int MSG_OPEN_TEST_URL = 0;
     private boolean mNeedTestPage = false;
     private static final int MAX_LENGTH = 14;
     private ProgressBar mPageLoadingProgressBar;
+    private ImageView img_loading;
     private X5WebView mWebView;
-    private ViewGroup mViewParent;;
+    private ViewGroup mViewParent;
     private static final String mHomeUrl = "http://dms.changan.com.cn/cvs-app/SY_UI/login.html";
 
     @Override
@@ -128,7 +130,7 @@ public static final int MSG_OPEN_TEST_URL = 0;
         }
         setContentView(R.layout.activity_main);
         mViewParent = (ViewGroup) findViewById(R.id.webView1);
-
+        img_loading = (ImageView) findViewById(R.id.img_loading);
 
         QbSdk.preInit(this);
 
@@ -222,8 +224,7 @@ public static final int MSG_OPEN_TEST_URL = 0;
                     mPageLoadingProgressBar.setVisibility(View.VISIBLE);
                 } else if (mPageLoadingProgressBar != null) {
                     mPageLoadingProgressBar.setVisibility(View.GONE);
-
-
+                    img_loading.setVisibility(View.GONE);
                 }
             }
         });
